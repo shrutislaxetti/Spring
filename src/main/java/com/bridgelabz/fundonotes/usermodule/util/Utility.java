@@ -6,7 +6,10 @@ import java.util.regex.Pattern;
 import javax.security.auth.login.LoginException;
 import javax.xml.bind.DatatypeConverter;
 import org.springframework.beans.factory.annotation.Value;
+
+import com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException;
 import com.bridgelabz.fundonotes.usermodule.exceptions.RegistrationException;
+import com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO;
 import com.bridgelabz.fundonotes.usermodule.model.LoginDTO;
 import com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO;
 import io.jsonwebtoken.Claims;
@@ -118,6 +121,16 @@ public class Utility {
 		System.out.println("Subject: " + claims.getSubject());
 		return claims.getId();
 
+	}
+
+	public static void validateFogetPasswordDetails(ForgetPasswordDTO forgetPasswordDTO) throws FogetPasswordException {
+		if (forgetPasswordDTO.getPassword() == null || (!validatePassword(forgetPasswordDTO.getPassword()))) {
+			throw new FogetPasswordException(
+					"Invalid Password !!..Password must contain atleat 1 special character,Upper_case letter nad minimum of 8 characters and numbres within it");
+		}
+		if (!(forgetPasswordDTO.getPassword().equals(forgetPasswordDTO.getConfirmpassword()))) {
+			throw new FogetPasswordException("Password should match with confirm Password");
+		}
 	}
 
 }

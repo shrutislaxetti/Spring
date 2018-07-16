@@ -11,7 +11,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.bridgelabz.fundonotes.usermodule.exceptions.ActivationException;
+import com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException;
 import com.bridgelabz.fundonotes.usermodule.exceptions.RegistrationException;
+import com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO;
 import com.bridgelabz.fundonotes.usermodule.model.LoginDTO;
 import com.bridgelabz.fundonotes.usermodule.model.Mail;
 import com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO;
@@ -30,27 +32,32 @@ public class UserServiceImplementation implements UserService {
 
 	@Autowired
 	private EmailService emialservive;
+	/*@Autowired
+	private */
 
 	@Value("${link}")
 	private String link;
 
+	@Value("${link1}")
+	private String link1;
+
 	public String login(LoginDTO loginDTO) throws LoginException {
 
 		Utility.validateLoginDetails(loginDTO);
-	
+
 		Optional<User> optionaluser = repository.findByEmail(loginDTO.getEmail());
 		System.out.println(optionaluser);
-		
+
 		if (optionaluser.isPresent()) {
 
-		 if (passwordEncoder.matches(loginDTO.getPassword(),optionaluser.get().getPassword())) {
+			if (passwordEncoder.matches(loginDTO.getPassword(), optionaluser.get().getPassword())) {
 
 				if (optionaluser.get().isStatus()) {
-					
+
 					User user = new User();
 					user.setEmail(loginDTO.getEmail());
 					return Utility.tokenGenerator(user.getEmail());
-					
+
 				} else {
 					throw new LoginException("Incorrect Password Exception");
 				}
@@ -84,9 +91,7 @@ public class UserServiceImplementation implements UserService {
 		mail.setBody(link + token);
 		mail.setSubject("Account activated");
 		mail.setTo(user.getEmail());
-
 		emialservive.sendActivationLink(mail);
-
 	}
 
 	public void activateAccount(String token) throws AddressException, MessagingException, ActivationException {
@@ -105,6 +110,39 @@ public class UserServiceImplementation implements UserService {
 		userobj.setEmail(user.get().getEmail());
 		userobj.setPassword(user.get().getPassword());
 		repository.save(userobj);
+
+	}
+
+	@Override
+	public void forgotPassword(String email) throws MessagingException, FogetPasswordException {
+		System.out.println(email);
+		Mail mail = new Mail();
+		String token = Utility.tokenGenerator(email);
+		mail.setBody(link1 + token);
+		mail.setSubject("Account activated");
+		mail.setTo(email);
+		emialservive.sendActivationLink(mail);
+	}
+
+	@Override
+	public void setNewPssword(ForgetPasswordDTO forgetPasswordDTO, String token) throws FogetPasswordException {
+
+		String email = Utility.parseJWT(token);
+		
+		Optional<User> optinaluser = repository.findById(email);
+		System.out.println(optinaluser);
+		if (!optinaluser.isPresent()) {
+			throw new FogetPasswordException("Failed to reset password");
+		}
+		User user = new User();
+		Utility.validateFogetPasswordDetails(forgetPasswordDTO);
+		String hashedPassword = passwordEncoder.encode(forgetPasswordDTO.getPassword());
+		user.setPassword(hashedPassword);
+		user.setUserName(optinaluser.get().getUserName());
+		user.setContactNum(optinaluser.get().getContactNum());
+		user.setEmail(optinaluser.get().getEmail());
+		user.setStatus(true);
+		repository.save(user);
 
 	}
 }

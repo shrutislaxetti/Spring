@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
 import com.bridgelabz.fundonotes.usermodule.exceptions.ActivationException;
 import com.bridgelabz.fundonotes.usermodule.exceptions.LoginException;
 import com.bridgelabz.fundonotes.usermodule.exceptions.RegistrationException;
+import com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException;
 import com.bridgelabz.fundonotes.usermodule.model.Response;
 
 @ControllerAdvice
@@ -49,7 +49,14 @@ public class UserExceptionalHandler extends Exception{
 		return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
 	}
 	
-	
+	@ExceptionHandler(FogetPasswordException.class)
+	public ResponseEntity<Response> FogetPasswordException(FogetPasswordException exception){
+		
+		logger.info("Error occured during Activation"+exception.getMessage() ,exception);
+		response.setMessage(exception.getMessage());
+		response.setStatus("11");
+		return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
+	}
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<Response> handleOtherException(Exception exception){
 		
@@ -58,4 +65,6 @@ public class UserExceptionalHandler extends Exception{
 		response.setStatus("0");
 		return new ResponseEntity<>(response,HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	
 }

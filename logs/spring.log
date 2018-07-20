@@ -1,0 +1,686 @@
+2018-07-17 11:05:51.756  INFO 12225 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 12225 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:05:51.758  INFO 12225 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:05:51.790  INFO 12225 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3aefe5e5: startup date [Tue Jul 17 11:05:51 IST 2018]; root of context hierarchy
+2018-07-17 11:05:53.121  INFO 12225 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:05:53.137  INFO 12225 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:05:53.138  INFO 12225 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:05:53.142  INFO 12225 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:05:53.212  INFO 12225 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-17 11:05:53.212  INFO 12225 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1422 ms
+2018-07-17 11:05:53.309  INFO 12225 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-17 11:05:53.312  INFO 12225 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-17 11:05:53.313  INFO 12225 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-17 11:05:53.313  INFO 12225 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-17 11:05:53.313  INFO 12225 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-17 11:05:53.341  WARN 12225 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'interceptorConfiguration': Unsatisfied dependency expressed through field 'loggerInteceptor'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-07-17 11:05:53.344  INFO 12225 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-07-17 11:05:53.355  INFO 12225 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-07-17 11:05:53.411 ERROR 12225 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field loggerInteceptor in com.bridgelabz.fundonotes.usermodule.configuration.InterceptorConfiguration required a bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' in your configuration.
+
+2018-07-17 11:05:57.028  INFO 12259 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 12259 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:05:57.030  INFO 12259 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:05:57.060  INFO 12259 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7ce3cb8e: startup date [Tue Jul 17 11:05:57 IST 2018]; root of context hierarchy
+2018-07-17 11:05:58.212  INFO 12259 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:05:58.235  INFO 12259 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:05:58.235  INFO 12259 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:05:58.240  INFO 12259 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:06:24.892  INFO 12426 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 12426 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:06:24.895  INFO 12426 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:06:24.924  INFO 12426 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@769f71a9: startup date [Tue Jul 17 11:06:24 IST 2018]; root of context hierarchy
+2018-07-17 11:06:26.049  INFO 12426 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:06:26.064  INFO 12426 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:06:26.064  INFO 12426 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:06:26.068  INFO 12426 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:06:26.127  INFO 12426 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-17 11:06:26.128  INFO 12426 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1204 ms
+2018-07-17 11:06:26.220  INFO 12426 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-17 11:06:26.223  INFO 12426 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-17 11:06:26.223  INFO 12426 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-17 11:06:26.223  INFO 12426 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-17 11:06:26.224  INFO 12426 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-17 11:06:26.250  WARN 12426 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'interceptorConfiguration': Unsatisfied dependency expressed through field 'loggerInteceptor'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-07-17 11:06:26.252  INFO 12426 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-07-17 11:06:26.266  INFO 12426 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-07-17 11:06:26.333 ERROR 12426 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field loggerInteceptor in com.bridgelabz.fundonotes.usermodule.configuration.InterceptorConfiguration required a bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' in your configuration.
+
+2018-07-17 11:12:07.385  INFO 12925 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 12925 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:12:07.388  INFO 12925 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:12:07.419  INFO 12925 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@be64738: startup date [Tue Jul 17 11:12:07 IST 2018]; root of context hierarchy
+2018-07-17 11:12:08.571  INFO 12925 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:12:08.586  INFO 12925 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:12:08.587  INFO 12925 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:12:08.590  INFO 12925 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:12:08.644  INFO 12925 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-17 11:12:08.644  INFO 12925 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1226 ms
+2018-07-17 11:12:08.729  INFO 12925 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-17 11:12:08.732  INFO 12925 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-17 11:12:08.732  INFO 12925 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-17 11:12:08.732  INFO 12925 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-17 11:12:08.733  INFO 12925 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-17 11:12:09.131  INFO 12925 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-07-17 11:12:09.131  INFO 12925 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2018-07-17 11:12:09.159  INFO 12925 --- [cluster-ClusterId{value='5b4d81b1bf9fb7327def8e7e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:27017
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:62) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:126) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:114) ~[mongodb-driver-core-3.6.4.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_171]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_171]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_171]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_171]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_171]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_171]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_171]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:59) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:57) ~[mongodb-driver-core-3.6.4.jar:na]
+	... 3 common frames omitted
+
+2018-07-17 11:12:09.287  WARN 12925 --- [main] o.s.d.m.c.m.BasicMongoPersistentProperty : Customizing field name for id property not allowed! Custom name will not be considered!
+2018-07-17 11:12:09.884  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.login(com.bridgelabz.fundonotes.usermodule.model.LoginDTO,javax.servlet.http.HttpServletResponse) throws javax.security.auth.login.LoginException
+2018-07-17 11:12:09.885  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/activate],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser(java.lang.String) throws javax.mail.internet.AddressException,javax.mail.MessagingException,com.bridgelabz.fundonotes.usermodule.exceptions.ActivationException
+2018-07-17 11:12:09.886  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/forgotpassword],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword(java.lang.String) throws javax.mail.MessagingException,com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException
+2018-07-17 11:12:09.886  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/setpassword],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword(com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO,java.lang.String) throws com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException
+2018-07-17 11:12:09.886  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/save],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.register(com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO) throws com.bridgelabz.fundonotes.usermodule.exceptions.RegistrationException,javax.mail.MessagingException
+2018-07-17 11:12:09.887  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-07-17 11:12:09.891  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-07-17 11:12:09.891  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-07-17 11:12:09.892  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-07-17 11:12:09.895  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-07-17 11:12:09.896  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-07-17 11:12:10.024  INFO 12925 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:12:10.203  INFO 12925 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@be64738: startup date [Tue Jul 17 11:12:07 IST 2018]; root of context hierarchy
+2018-07-17 11:12:10.242  INFO 12925 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:12:10.242  INFO 12925 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:12:10.256  INFO 12925 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in userExceptionalHandler
+2018-07-17 11:12:10.425  INFO 12925 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-17 11:12:10.441  INFO 12925 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-07-17 11:12:10.452  INFO 12925 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found {0} custom documentation plugin(s)
+2018-07-17 11:12:10.460  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-07-17 11:12:10.462  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.464  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: errorHtml belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController}]] 
+2018-07-17 11:12:10.464  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.464  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: error belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController}]] 
+2018-07-17 11:12:10.465  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:12:10.465  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: activateUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:12:10.465  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:12:10.465  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: forgetpassword belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:12:10.466  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:12:10.466  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: login belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:12:10.466  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:12:10.466  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: register belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:12:10.466  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:12:10.466  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: setNewPassword belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:12:10.469  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/basic-error-controller Description: basic-error-controller Position: 0
+2018-07-17 11:12:10.470  INFO 12925 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+2018-07-17 11:12:10.484  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:12:10.484  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:12:10.489  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:12:10.489  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:12:10.494  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.494  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.503  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.506  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.509  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.510  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.511  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.512  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.513  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.514  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.515  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.516  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.517  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.518  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.519  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.519  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.520  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.521  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:12:10.524  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.525  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.526  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.526  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.564  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.564  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.565  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.565  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:12:10.566  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.View(true)
+2018-07-17 11:12:10.566  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.View(true)
+2018-07-17 11:12:10.569  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.View(true)
+2018-07-17 11:12:10.569  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.View(true)
+2018-07-17 11:12:10.570  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.570  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.573  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.575  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.577  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.578  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.579  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.581  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.586  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.587  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.588  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.589  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.590  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.591  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.592  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.592  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.593  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.593  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:12:10.604  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.604  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.604  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.604  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.606  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.606  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.606  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.606  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.606  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/activate.com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.606  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/activate.com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.611  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:12:10.612  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:12:10.613  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.613  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.614  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.614  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.614  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/forgotpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.614  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/forgotpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.615  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:12:10.616  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:12:10.617  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.617  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.618  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.618  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/login.com.bridgelabz.fundonotes.usermodule.controller.UserController.login.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.619  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/login.com.bridgelabz.fundonotes.usermodule.controller.UserController.login.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.621  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:12:10.621  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.623  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.625  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.625  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.625  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.625  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:12:10.626  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/save.com.bridgelabz.fundonotes.usermodule.controller.UserController.register.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.626  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/save.com.bridgelabz.fundonotes.usermodule.controller.UserController.register.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.627  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:12:10.628  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.629  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.630  INFO 12925 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.630  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.630  INFO 12925 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.630  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:12:10.630  INFO 12925 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/setpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.630  INFO 12925 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/setpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:12:10.632  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:12:10.633  INFO 12925 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:12:10.662  INFO 12925 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-17 11:12:10.665  INFO 12925 --- [main] c.b.fundonotes.FundoNotesApplication     : Started FundoNotesApplication in 3.549 seconds (JVM running for 3.918)
+2018-07-17 11:13:09.225  INFO 12925 --- [cluster-ClusterId{value='5b4d81b1bf9fb7327def8e7e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:7, serverValue:1}] to localhost:27017
+2018-07-17 11:13:09.233  INFO 12925 --- [cluster-ClusterId{value='5b4d81b1bf9fb7327def8e7e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 5]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=6546100}
+2018-07-17 11:13:09.233  INFO 12925 --- [cluster-ClusterId{value='5b4d81b1bf9fb7327def8e7e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-07-17 11:13:14.575  INFO 12925 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-07-17 11:13:14.576  INFO 12925 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@be64738: startup date [Tue Jul 17 11:12:07 IST 2018]; root of context hierarchy
+2018-07-17 11:13:14.578  INFO 12925 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-17 11:14:13.733  INFO 13188 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 13188 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:14:13.735  INFO 13188 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:14:13.764  INFO 13188 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1184ab05: startup date [Tue Jul 17 11:14:13 IST 2018]; root of context hierarchy
+2018-07-17 11:14:14.986  INFO 13188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:14:15.002  INFO 13188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:14:15.002  INFO 13188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:14:15.006  INFO 13188 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:14:15.058  INFO 13188 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-17 11:14:15.058  INFO 13188 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1294 ms
+2018-07-17 11:14:15.144  INFO 13188 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-17 11:14:15.147  INFO 13188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-17 11:14:15.147  INFO 13188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-17 11:14:15.147  INFO 13188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-17 11:14:15.148  INFO 13188 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-17 11:14:15.502  INFO 13188 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-07-17 11:14:15.503  INFO 13188 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2018-07-17 11:14:15.546  INFO 13188 --- [cluster-ClusterId{value='5b4d822fbf9fb73384746aea', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+2018-07-17 11:14:15.549  INFO 13188 --- [cluster-ClusterId{value='5b4d822fbf9fb73384746aea', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 5]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2015904}
+2018-07-17 11:14:15.550  INFO 13188 --- [cluster-ClusterId{value='5b4d822fbf9fb73384746aea', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-07-17 11:14:15.653  WARN 13188 --- [main] o.s.d.m.c.m.BasicMongoPersistentProperty : Customizing field name for id property not allowed! Custom name will not be considered!
+2018-07-17 11:14:16.102  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.login(com.bridgelabz.fundonotes.usermodule.model.LoginDTO,javax.servlet.http.HttpServletResponse) throws javax.security.auth.login.LoginException
+2018-07-17 11:14:16.103  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/activate],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser(java.lang.String) throws javax.mail.internet.AddressException,javax.mail.MessagingException,com.bridgelabz.fundonotes.usermodule.exceptions.ActivationException
+2018-07-17 11:14:16.103  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/forgotpassword],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword(java.lang.String) throws javax.mail.MessagingException,com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException
+2018-07-17 11:14:16.104  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/setpassword],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword(com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO,java.lang.String) throws com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException
+2018-07-17 11:14:16.104  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/save],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.register(com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO) throws com.bridgelabz.fundonotes.usermodule.exceptions.RegistrationException,javax.mail.MessagingException
+2018-07-17 11:14:16.105  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-07-17 11:14:16.107  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-07-17 11:14:16.108  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-07-17 11:14:16.108  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-07-17 11:14:16.111  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-07-17 11:14:16.112  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-07-17 11:14:16.239  INFO 13188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:14:16.383  INFO 13188 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1184ab05: startup date [Tue Jul 17 11:14:13 IST 2018]; root of context hierarchy
+2018-07-17 11:14:16.419  INFO 13188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:14:16.419  INFO 13188 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:14:16.431  INFO 13188 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in userExceptionalHandler
+2018-07-17 11:14:16.591  INFO 13188 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-17 11:14:16.607  INFO 13188 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-07-17 11:14:16.617  INFO 13188 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found {0} custom documentation plugin(s)
+2018-07-17 11:14:16.623  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-07-17 11:14:16.626  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.627  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: errorHtml belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController}]] 
+2018-07-17 11:14:16.628  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.628  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: error belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController}]] 
+2018-07-17 11:14:16.628  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:14:16.628  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: activateUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:14:16.628  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:14:16.629  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: forgetpassword belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:14:16.629  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:14:16.629  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: login belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:14:16.629  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:14:16.629  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: register belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:14:16.630  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:14:16.630  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: setNewPassword belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:14:16.632  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/basic-error-controller Description: basic-error-controller Position: 0
+2018-07-17 11:14:16.633  INFO 13188 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+2018-07-17 11:14:16.646  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:14:16.646  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:14:16.651  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:14:16.651  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:14:16.655  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.655  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.663  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.665  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.668  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.669  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.670  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.671  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.671  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.672  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.673  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.674  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.675  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.676  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.676  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.677  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.678  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.679  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:14:16.682  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.683  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.683  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.683  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.709  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.709  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.710  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.710  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:14:16.710  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.View(true)
+2018-07-17 11:14:16.710  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.View(true)
+2018-07-17 11:14:16.711  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.View(true)
+2018-07-17 11:14:16.712  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.View(true)
+2018-07-17 11:14:16.712  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.712  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.713  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.713  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.714  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.715  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.715  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.716  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.716  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.717  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.717  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.718  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.718  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.719  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.720  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.720  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.721  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.721  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:14:16.731  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.732  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.732  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.732  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.733  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.733  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.733  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.733  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.733  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/activate.com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.734  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/activate.com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.738  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:14:16.739  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:14:16.741  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.741  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.741  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.741  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.741  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/forgotpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.741  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/forgotpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.743  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:14:16.744  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:14:16.745  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.745  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.745  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.745  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.746  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.746  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/login.com.bridgelabz.fundonotes.usermodule.controller.UserController.login.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.747  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/login.com.bridgelabz.fundonotes.usermodule.controller.UserController.login.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.749  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:14:16.749  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.751  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.753  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.753  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.753  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.753  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:14:16.754  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/save.com.bridgelabz.fundonotes.usermodule.controller.UserController.register.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.754  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/save.com.bridgelabz.fundonotes.usermodule.controller.UserController.register.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.755  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:14:16.756  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.757  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.758  INFO 13188 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.758  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.758  INFO 13188 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.758  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:14:16.759  INFO 13188 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/setpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.759  INFO 13188 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/setpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:14:16.760  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:14:16.761  INFO 13188 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:14:16.782  INFO 13188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-17 11:14:16.785  INFO 13188 --- [main] c.b.fundonotes.FundoNotesApplication     : Started FundoNotesApplication in 3.295 seconds (JVM running for 3.659)
+2018-07-17 11:14:58.774  INFO 13188 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-17 11:14:58.774  INFO 13188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-07-17 11:14:58.797  INFO 13188 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2018-07-17 11:14:58.809  INFO 13188 --- [http-nio-8080-exec-1] c.b.f.u.l.LoggerInterceptor              : Before handling the request
+2018-07-17 11:14:58.947  INFO 13188 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:4}] to localhost:27017
+2018-07-17 11:14:59.238  INFO 13188 --- [http-nio-8080-exec-1] c.b.f.u.l.LoggerInterceptor              : After handling the request
+2018-07-17 11:14:59.238  INFO 13188 --- [http-nio-8080-exec-1] c.b.f.u.l.LoggerInterceptor              : After rendering the view
+2018-07-17 11:19:33.703  INFO 13188 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-07-17 11:19:33.704  INFO 13188 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1184ab05: startup date [Tue Jul 17 11:14:13 IST 2018]; root of context hierarchy
+2018-07-17 11:19:33.708  INFO 13188 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-17 11:19:33.712  INFO 13188 --- [RMI TCP Connection(2)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:4}] to localhost:27017 because the pool has been closed.
+2018-07-17 11:19:39.797  INFO 13648 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 13648 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:19:39.799  INFO 13648 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:19:39.829  INFO 13648 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@22a637e7: startup date [Tue Jul 17 11:19:39 IST 2018]; root of context hierarchy
+2018-07-17 11:19:40.977  INFO 13648 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:19:40.991  INFO 13648 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:19:40.992  INFO 13648 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:19:40.995  INFO 13648 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:19:41.053  INFO 13648 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-17 11:19:41.053  INFO 13648 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1224 ms
+2018-07-17 11:19:41.136  INFO 13648 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-17 11:19:41.139  INFO 13648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-17 11:19:41.140  INFO 13648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-17 11:19:41.140  INFO 13648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-17 11:19:41.140  INFO 13648 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-17 11:19:41.167  WARN 13648 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'interceptorConfiguration': Unsatisfied dependency expressed through field 'loggerInteceptor'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-07-17 11:19:41.169  INFO 13648 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-07-17 11:19:41.179  INFO 13648 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2018-07-17 11:19:41.233 ERROR 13648 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field loggerInteceptor in com.bridgelabz.fundonotes.usermodule.configuration.InterceptorConfiguration required a bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.bridgelabz.fundonotes.usermodule.loggerinterceptor.LoggerInterceptor' in your configuration.
+
+2018-07-17 11:20:10.336  INFO 13703 --- [main] c.b.fundonotes.FundoNotesApplication     : Starting FundoNotesApplication on bridgrlabz with PID 13703 (/home/bridgrlabz/fundonotes/FundoNotes/target/classes started by bridgrlabz in /home/bridgrlabz/fundonotes/FundoNotes)
+2018-07-17 11:20:10.338  INFO 13703 --- [main] c.b.fundonotes.FundoNotesApplication     : No active profile set, falling back to default profiles: default
+2018-07-17 11:20:10.369  INFO 13703 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b14c583: startup date [Tue Jul 17 11:20:10 IST 2018]; root of context hierarchy
+2018-07-17 11:20:11.511  INFO 13703 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-07-17 11:20:11.526  INFO 13703 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-07-17 11:20:11.526  INFO 13703 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.31
+2018-07-17 11:20:11.530  INFO 13703 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2018-07-17 11:20:11.582  INFO 13703 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-07-17 11:20:11.582  INFO 13703 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1213 ms
+2018-07-17 11:20:11.676  INFO 13703 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-07-17 11:20:11.679  INFO 13703 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-07-17 11:20:11.680  INFO 13703 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-07-17 11:20:11.680  INFO 13703 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-07-17 11:20:11.680  INFO 13703 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-07-17 11:20:12.013  INFO 13703 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2018-07-17 11:20:12.013  INFO 13703 --- [main] org.mongodb.driver.cluster               : Adding discovered server localhost:27017 to client view of cluster
+2018-07-17 11:20:12.055  INFO 13703 --- [cluster-ClusterId{value='5b4d8394bf9fb73587126a1a', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:5}] to localhost:27017
+2018-07-17 11:20:12.058  INFO 13703 --- [cluster-ClusterId{value='5b4d8394bf9fb73587126a1a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 6, 5]}, minWireVersion=0, maxWireVersion=6, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1971946}
+2018-07-17 11:20:12.059  INFO 13703 --- [cluster-ClusterId{value='5b4d8394bf9fb73587126a1a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Discovered cluster type of STANDALONE
+2018-07-17 11:20:12.157  WARN 13703 --- [main] o.s.d.m.c.m.BasicMongoPersistentProperty : Customizing field name for id property not allowed! Custom name will not be considered!
+2018-07-17 11:20:12.619  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/login],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.login(com.bridgelabz.fundonotes.usermodule.model.LoginDTO,javax.servlet.http.HttpServletResponse) throws javax.security.auth.login.LoginException
+2018-07-17 11:20:12.620  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/activate],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser(java.lang.String) throws javax.mail.internet.AddressException,javax.mail.MessagingException,com.bridgelabz.fundonotes.usermodule.exceptions.ActivationException
+2018-07-17 11:20:12.620  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/forgotpassword],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword(java.lang.String) throws javax.mail.MessagingException,com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException
+2018-07-17 11:20:12.621  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/setpassword],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword(com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO,java.lang.String) throws com.bridgelabz.fundonotes.usermodule.exceptions.FogetPasswordException
+2018-07-17 11:20:12.621  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginregister/save],methods=[POST]}" onto public org.springframework.http.ResponseEntity<com.bridgelabz.fundonotes.usermodule.model.Response> com.bridgelabz.fundonotes.usermodule.controller.UserController.register(com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO) throws com.bridgelabz.fundonotes.usermodule.exceptions.RegistrationException,javax.mail.MessagingException
+2018-07-17 11:20:12.622  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-07-17 11:20:12.625  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-07-17 11:20:12.625  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-07-17 11:20:12.625  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-07-17 11:20:12.628  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-07-17 11:20:12.629  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-07-17 11:20:12.742  INFO 13703 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:20:12.893  INFO 13703 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b14c583: startup date [Tue Jul 17 11:20:10 IST 2018]; root of context hierarchy
+2018-07-17 11:20:12.927  INFO 13703 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:20:12.927  INFO 13703 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-07-17 11:20:12.939  INFO 13703 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in userExceptionalHandler
+2018-07-17 11:20:13.087  INFO 13703 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-07-17 11:20:13.101  INFO 13703 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-07-17 11:20:13.110  INFO 13703 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found {0} custom documentation plugin(s)
+2018-07-17 11:20:13.116  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-07-17 11:20:13.119  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.120  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: errorHtml belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController}]] 
+2018-07-17 11:20:13.120  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.120  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: error belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController}]] 
+2018-07-17 11:20:13.121  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:20:13.121  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: activateUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:20:13.121  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:20:13.121  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: forgetpassword belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:20:13.121  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:20:13.121  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: login belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:20:13.122  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:20:13.122  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: register belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:20:13.122  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:20:13.122  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: setNewPassword belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.bridgelabz.fundonotes.usermodule.controller.UserController}]] 
+2018-07-17 11:20:13.124  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/basic-error-controller Description: basic-error-controller Position: 0
+2018-07-17 11:20:13.125  INFO 13703 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+2018-07-17 11:20:13.137  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:20:13.138  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:20:13.142  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:20:13.142  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.util.Map<java.lang.String,java.lang.Object>(true)
+2018-07-17 11:20:13.146  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.146  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.155  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.157  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.159  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.160  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.161  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.162  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.163  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.164  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.164  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.165  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.166  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.167  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.167  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.168  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.169  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.170  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method error was basic-error-controller
+2018-07-17 11:20:13.172  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.173  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.173  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.173  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.197  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.197  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.198  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.198  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.ModelAndView(true)
+2018-07-17 11:20:13.198  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.View(true)
+2018-07-17 11:20:13.198  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.View(true)
+2018-07-17 11:20:13.199  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: org.springframework.web.servlet.View(true)
+2018-07-17 11:20:13.200  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key org.springframework.web.servlet.View(true)
+2018-07-17 11:20:13.200  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.200  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /error.org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.201  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.201  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.202  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.202  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.203  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.203  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.204  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.205  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.205  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.206  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.206  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.207  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.207  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.208  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.208  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.209  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method errorHtml was basic-error-controller
+2018-07-17 11:20:13.218  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.218  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.219  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.219  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.220  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.220  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.220  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.220  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.220  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/activate.com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.220  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/activate.com.bridgelabz.fundonotes.usermodule.controller.UserController.activateUser.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.225  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:20:13.225  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method activateUser was user-controller
+2018-07-17 11:20:13.227  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.227  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.227  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.227  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.227  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/forgotpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.227  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/forgotpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.forgetpassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.228  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:20:13.229  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method forgetpassword was user-controller
+2018-07-17 11:20:13.231  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.231  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.231  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.231  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.LoginDTO(false)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.232  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/login.com.bridgelabz.fundonotes.usermodule.controller.UserController.login.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.233  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/login.com.bridgelabz.fundonotes.usermodule.controller.UserController.login.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.234  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:20:13.235  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was user-controller
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.236  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.238  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.238  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.238  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.238  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.RegistrationDTO(false)
+2018-07-17 11:20:13.239  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/save.com.bridgelabz.fundonotes.usermodule.controller.UserController.register.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.239  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/save.com.bridgelabz.fundonotes.usermodule.controller.UserController.register.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.240  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:20:13.241  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method register was user-controller
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.Response(true)
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.242  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.243  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.243  INFO 13703 --- [main] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.243  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.244  INFO 13703 --- [main] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.244  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.bridgelabz.fundonotes.usermodule.model.ForgetPasswordDTO(false)
+2018-07-17 11:20:13.244  INFO 13703 --- [main] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /loginregister/setpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.244  INFO 13703 --- [main] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /loginregister/setpassword.com.bridgelabz.fundonotes.usermodule.controller.UserController.setNewPassword.DefaultGenericTypeNamingStrategy
+2018-07-17 11:20:13.245  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:20:13.246  INFO 13703 --- [main] s.w.ClassOrApiAnnotationResourceGrouping : Group for method setNewPassword was user-controller
+2018-07-17 11:20:13.267  INFO 13703 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-07-17 11:20:13.270  INFO 13703 --- [main] c.b.fundonotes.FundoNotesApplication     : Started FundoNotesApplication in 3.216 seconds (JVM running for 3.61)
+2018-07-17 11:20:22.496  INFO 13703 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-07-17 11:20:22.496  INFO 13703 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-07-17 11:20:22.507  INFO 13703 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2018-07-17 11:20:22.518  INFO 13703 --- [http-nio-8080-exec-1] c.b.f.u.l.LoggerInterceptor              : Before handling the request
+2018-07-17 11:20:22.588  INFO 13703 --- [http-nio-8080-exec-1] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+2018-07-17 11:20:22.801  INFO 13703 --- [http-nio-8080-exec-1] c.b.f.u.l.LoggerInterceptor              : After handling the request
+2018-07-17 11:20:22.801  INFO 13703 --- [http-nio-8080-exec-1] c.b.f.u.l.LoggerInterceptor              : After rendering the view
+2018-07-17 11:25:38.720  INFO 13703 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-07-17 11:25:38.722  INFO 13703 --- [RMI TCP Connection(2)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4b14c583: startup date [Tue Jul 17 11:20:10 IST 2018]; root of context hierarchy
+2018-07-17 11:25:38.729  INFO 13703 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-07-17 11:25:38.734  INFO 13703 --- [RMI TCP Connection(2)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:2, serverValue:6}] to localhost:27017 because the pool has been closed.

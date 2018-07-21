@@ -2,14 +2,7 @@ package com.bridgelabz.fundonotes.note.models;
 
 import java.util.Date;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "note")
-public class Note {
-
-	@Id
-	private String noteId;
+public class ViewNoteDTO {
 
 	private String title;
 
@@ -22,34 +15,6 @@ public class Note {
 	private String colour;
 
 	private Date remainder;
-
-	private String userid;
-
-	private boolean trash;
-
-	public String getColour() {
-		return colour;
-	}
-
-	public void setColour(String colour) {
-		this.colour = colour;
-	}
-
-	public boolean isTrash() {
-		return trash;
-	}
-
-	public void setTrash(boolean trash) {
-		this.trash = trash;
-	}
-
-	public String getNoteId() {
-		return noteId;
-	}
-
-	public void setNoteId(String noteId) {
-		this.noteId = noteId;
-	}
 
 	public String getTitle() {
 		return title;
@@ -83,12 +48,12 @@ public class Note {
 		this.updatedAt = updatedAt;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getColour() {
+		return colour;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setColour(String colour) {
+		this.colour = colour;
 	}
 
 	public Date getRemainder() {
@@ -98,5 +63,15 @@ public class Note {
 	public void setRemainder(Date date) {
 		this.remainder = date;
 	}
+
+	public boolean isTrash() {
+		return trash;
+	}
+
+	public void setTrash(boolean trash) {
+		this.trash = trash;
+	}
+
+	private boolean trash;
 
 }

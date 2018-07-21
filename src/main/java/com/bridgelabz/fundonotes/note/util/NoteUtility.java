@@ -4,11 +4,9 @@ import java.util.Date;
 
 import javax.xml.bind.DatatypeConverter;
 
-import com.bridgelabz.fundonotes.note.exceptions.NoteNotFoundException;
-import com.bridgelabz.fundonotes.note.exceptions.UnauthorizedException;
+import com.bridgelabz.fundonotes.note.exceptions.DateException;
+import com.bridgelabz.fundonotes.note.exceptions.NoteNullPointerException;
 import com.bridgelabz.fundonotes.note.models.CreateNoteDTO;
-import com.bridgelabz.fundonotes.note.models.UpdateNoteDTO;
-
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -16,11 +14,12 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 public class NoteUtility {
 
-	public static void validateNote(CreateNoteDTO noteDTO) throws NoteNotFoundException {
-		if (noteDTO.getTitle() == null || noteDTO.getTitle().isEmpty()) {
-			throw new NoteNotFoundException("Failed to Create Note ..Fileds should not be empty");
-		}
+	public static void validateNote(CreateNoteDTO noteDTO) throws NoteNullPointerException {
 
+		if (noteDTO.getTitle() == null || noteDTO.getTitle().isEmpty() && noteDTO.getDescription() == null
+				|| noteDTO.getDescription().isEmpty() && noteDTO.getColour() == null || noteDTO.getColour().isEmpty()) {
+			throw new NoteNullPointerException("Failed to Create Note ..Fileds should not be empty");
+		}
 	}
 
 	public static String tokenGenerator(String id) {
@@ -48,15 +47,14 @@ public class NoteUtility {
 		return date;
 	}
 
-	public static void validateUpdatenote(UpdateNoteDTO updateNoteDTO)
-			throws NoteNotFoundException, UnauthorizedException {
+	public static void validateDate(Date date) throws DateException {
 
-		if (updateNoteDTO.getTitle() == null
-				|| updateNoteDTO.getTitle().isEmpty() && updateNoteDTO.getDescription() == null
-				|| updateNoteDTO.getDescription().isEmpty()) {
-			throw new NoteNotFoundException("Failed to Create Note ..Fileds should not be empty");
-		}
-
+        if(date.before(new Date())){
+            throw new DateException("The date is older than current day");
+        } else {
+            System.out.println("The date is future day");
+        }
+		
 	}
 
 }

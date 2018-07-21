@@ -1,19 +1,31 @@
 package com.bridgelabz.fundonotes.note.models;
 
+import java.util.Date;
+
 public class CreateNoteDTO {
 
-	private String noteId;
-	
 	private String title;
 
 	private String description;
 
-	public String getId() {
-		return noteId;
+	private String colour="white";
+
+	private Date remainder;
+	
+	public String getColour() {
+		return colour;
 	}
 
-	public void setId(String id) {
-		this.noteId = id;
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+
+	public Date getRemainder() {
+		return remainder;
+	}
+
+	public void setRemainder(Date remaindme) {
+		this.remainder = remaindme;
 	}
 
 	public String getTitle() {
@@ -30,11 +42,6 @@ public class CreateNoteDTO {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	@Override
-	public String toString() {
-		return "CtreateNoteDTO [title=" + title + ", description=" + description + "]";
 	}
 
 }

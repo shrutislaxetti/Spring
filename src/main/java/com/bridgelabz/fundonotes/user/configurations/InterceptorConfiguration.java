@@ -8,9 +8,11 @@ import com.bridgelabz.fundonotes.user.loggerinterceptor.LoggerInterceptor;
 
 @Configuration
 public class InterceptorConfiguration implements WebMvcConfigurer{
+	
 	@Override
     public void addInterceptors(InterceptorRegistry registry) {
        
 		registry.addInterceptor(new LoggerInterceptor()).addPathPatterns("/**");
     }
+	
 }

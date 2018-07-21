@@ -6,10 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.fundonotes.user.exceptions.FogetPasswordException;
@@ -53,7 +54,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/activate", method = RequestMethod.GET)
-	public ResponseEntity<Response> activateUser(@RequestParam("token") String token)
+	public ResponseEntity<Response> activateUser(@RequestHeader("token") String token)
 			throws UserNotFoundException, MessagingException {
 
 		userservice.activateAccount(token);
@@ -63,8 +64,8 @@ public class UserController {
 		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/forgotpassword", method = RequestMethod.GET)
-	public ResponseEntity<Response> forgetpassword(@RequestParam("email") String email)
+	@RequestMapping(value = "/forgotpassword/{email}", method = RequestMethod.GET)
+	public ResponseEntity<Response> forgetpassword(@PathVariable("email") String email)
 			throws MessagingException, FogetPasswordException {
 		
 		userservice.forgotPassword(email);
@@ -76,7 +77,7 @@ public class UserController {
 
 	@RequestMapping(value = "/setpassword", method = RequestMethod.PUT)
 	public ResponseEntity<Response> setNewPassword(@RequestBody ForgetPasswordDTO forgetPasswordDTO,
-			@RequestParam("token") String token) throws FogetPasswordException {
+			@RequestHeader("token") String token) throws FogetPasswordException, UserNotFoundException {
 		userservice.setNewPssword(forgetPasswordDTO, token);
 		Response responseDTO = new Response();
 		responseDTO.setMessage("Resetting Password successfull");

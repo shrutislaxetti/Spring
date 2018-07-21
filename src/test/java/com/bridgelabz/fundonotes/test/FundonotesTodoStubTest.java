@@ -1,6 +1,5 @@
 package com.bridgelabz.fundonotes.test;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +11,6 @@ import org.springframework.web.context.WebApplicationContext;
 import com.bridgelabz.fundonotes.FundoNotesApplication;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -53,7 +51,7 @@ public class FundonotesTodoStubTest {
 
 	// @Test
 	public void activateTest() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/activate").param("token",
+		mockMvc.perform(MockMvcRequestBuilders.get("/activate").header("token",
 				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJzaHJ1dGlsYXhldHRpQGdtYWlsLmNvbSIsImlhdCI6MTUzMjA2NzU5NCwic3ViIjoic2hydXRpbGF4ZXR0aUBnbWFpbC5jb20ifQ.Y04eVABJi93EX7VJtf6MUYo7Ycc8mD6zO3frSyUJeAo")
 				.accept(MediaType.TEXT_PLAIN_VALUE)).andExpect(jsonPath("$.message").value("Account activated"))
 				.andExpect(jsonPath("$.status").value(201));
@@ -61,7 +59,7 @@ public class FundonotesTodoStubTest {
 
 	// @Test
 	public void forgetPasswordTest() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/forgotpassword").param("email", "shrutilaxetti@gmail.com")
+		mockMvc.perform(MockMvcRequestBuilders.get("/forgotpassword").header("email", "shrutilaxetti@gmail.com")
 				.content(MediaType.TEXT_PLAIN_VALUE)).andExpect(jsonPath("$.message").value("Password Reset Link Sent"))
 				.andExpect(jsonPath("$.status").value(202));
 	}

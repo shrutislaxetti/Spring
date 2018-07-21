@@ -123,14 +123,14 @@ public class UserServiceImplementation implements UserService {
 	}
 
 	@Override
-	public void setNewPssword(ForgetPasswordDTO forgetPasswordDTO, String token) throws FogetPasswordException {
+	public void setNewPssword(ForgetPasswordDTO forgetPasswordDTO, String token) throws FogetPasswordException, UserNotFoundException {
 
 		String email = Utility.parseJWT(token);
 
 		Optional<User> optinaluser = repository.findById(email);
 
 		if (!optinaluser.isPresent()) {
-			throw new FogetPasswordException("Failed to reset password");
+			throw new UserNotFoundException("Failed to reset password");
 		}
 	
 		User user = new User();

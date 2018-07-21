@@ -21,6 +21,6 @@ public interface UserService {
 
 	public void forgotPassword(String email) throws MessagingException, FogetPasswordException;
 
-	public void setNewPssword(ForgetPasswordDTO forgetPasswordDTO, String token) throws FogetPasswordException;
+	public void setNewPssword(ForgetPasswordDTO forgetPasswordDTO, String token) throws FogetPasswordException, UserNotFoundException;
 
 }

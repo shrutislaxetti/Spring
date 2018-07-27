@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import com.bridgelabz.fundonotes.note.exceptions.DateException;
+import com.bridgelabz.fundonotes.note.exceptions.LabelException;
 import com.bridgelabz.fundonotes.note.exceptions.NoteNotFoundException;
 import com.bridgelabz.fundonotes.note.exceptions.NoteUpdationException;
 import com.bridgelabz.fundonotes.note.exceptions.UnauthorizedException;
@@ -56,6 +57,14 @@ public class NoteExceptionalHandler {
 		response.setStatus(405);
 		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 	}
-	
+   
+	public ResponseEntity<Response> handleLabelException(LabelException exception) {
+		
+		logger.error("Label Already exists" + exception.getMessage(), exception);
+		Response response = new Response();
+		response.setMessage(exception.getMessage());
+		response.setStatus(405);
+		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+	}
 	
 }

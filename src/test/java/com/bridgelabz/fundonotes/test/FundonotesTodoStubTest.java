@@ -11,6 +11,7 @@ import org.springframework.web.context.WebApplicationContext;
 import com.bridgelabz.fundonotes.FundoNotesApplication;
 
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -41,7 +42,7 @@ public class FundonotesTodoStubTest {
 				.andExpect(jsonPath("$.status").value(201));
 	}
 
-	// @Test
+	//@Test
 	public void loginTest() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_JSON)
 				.content("{ \"email\" :\"shrutilaxetti@gmail.com\",\"password\":\"Shru@1234\"}")
@@ -73,4 +74,29 @@ public class FundonotesTodoStubTest {
 				.andExpect(jsonPath("$.message").value("Resetting Password successfull"))
 				.andExpect(jsonPath("$.status").value(201));
 	}
+
+	/************************* Fundo Node Test ******************************/
+
+	//@Test
+	public void updateNoteTest() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.put("/update/{noteId}", "5b53305cbf9fb74f82ea7742").contentType(MediaType.APPLICATION_JSON).requestAttr("token",
+				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1YjUxNjZiN2JmOWZiNzFjMTgxNWIzZTMiLCJpYXQiOjE1MzI0MTEyNTUsInN1YiI6IjViNTE2NmI3YmY5ZmI3MWMxODE1YjNlMyJ9.DUFH4TG0VQhl4jnl5BUZNLke-ERI71TFz8LwpoO1FIc")
+				.content(
+						"{ \"title\" :\"testing\",\"description\":\"today\",\"colour\" :\"blue\",\"remainder\" :\"2018-08-21T13:08:44.165Z\"}"))
+				.andExpect(jsonPath("$.message").value("Note Updated Successfully!!"))
+				.andExpect(jsonPath("$.status").value(102));
+
+	}
+	
+	@Test
+	public void createNoteTest() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.post("/create").contentType(MediaType.APPLICATION_JSON).requestAttr("token",
+				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1YjUxNjZiN2JmOWZiNzFjMTgxNWIzZTMiLCJpYXQiOjE1MzI0MTEyNTUsInN1YiI6IjViNTE2NmI3YmY5ZmI3MWMxODE1YjNlMyJ9.DUFH4TG0VQhl4jnl5BUZNLke-ERI71TFz8LwpoO1FIc")
+				.content("{ \"title\" :\"testing\",\"description\":\"today\",\"colour\" :\"violet\",\"remainder\" :\"2018-08-21T13:08:44.165Z\"}"));
+			
+
+	}
+	
+	
+	
 }

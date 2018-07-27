@@ -7,12 +7,19 @@ import javax.xml.bind.DatatypeConverter;
 import com.bridgelabz.fundonotes.note.exceptions.DateException;
 import com.bridgelabz.fundonotes.note.exceptions.NoteNullPointerException;
 import com.bridgelabz.fundonotes.note.models.CreateNoteDTO;
+import com.bridgelabz.fundonotes.note.exceptions.LabelException;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 public class NoteUtility {
+
+	private NoteUtility() {
+		super();
+		
+	}
 
 	public static void validateNote(CreateNoteDTO noteDTO) throws NoteNullPointerException {
 
@@ -43,8 +50,8 @@ public class NoteUtility {
 	}
 
 	public static Date createdAt() {
-		Date date = new Date();
-		return date;
+		
+		return new Date();
 	}
 
 	public static void validateDate(Date date) throws DateException {
@@ -54,6 +61,13 @@ public class NoteUtility {
         } else {
             System.out.println("The date is future day");
         }
+		
+	}
+
+	public static void validateLabel(String labelName) throws LabelException {
+		if(labelName ==null || labelName.isEmpty()) {
+			throw new LabelException("LabelName should not be empty");
+		}
 		
 	}
 

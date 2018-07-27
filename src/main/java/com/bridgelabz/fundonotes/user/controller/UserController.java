@@ -48,7 +48,7 @@ public class UserController {
 		Response responseDTO = new Response();
 		responseDTO.setMessage("Login Successfull");
 		responseDTO.setStatus(201);
-		resp.setHeader("token", token);
+		resp.setHeader("userId", token);
 		return new ResponseEntity<>(responseDTO, HttpStatus.OK);
 
 	}

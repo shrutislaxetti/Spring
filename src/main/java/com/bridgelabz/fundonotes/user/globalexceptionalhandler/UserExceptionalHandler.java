@@ -38,7 +38,7 @@ public class UserExceptionalHandler {
 	}
 	
 	@ExceptionHandler(UserNotFoundException.class)
-	public ResponseEntity<Response> UserNotFoundException(UserNotFoundException exception){
+	public ResponseEntity<Response> userNotFoundException(UserNotFoundException exception){
 		
 		logger.info("Error occured during Activation"+exception.getMessage() ,exception);
 		Response response = new Response();
@@ -48,7 +48,7 @@ public class UserExceptionalHandler {
 	}
 	
 	@ExceptionHandler(FogetPasswordException.class)
-	public ResponseEntity<Response> FogetPasswordException(FogetPasswordException exception){
+	public ResponseEntity<Response> fogetPasswordException(FogetPasswordException exception){
 		
 		logger.info("Error occured during Activation"+exception.getMessage() ,exception);
 		Response response = new Response();

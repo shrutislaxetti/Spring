@@ -1,5 +1,7 @@
 package com.bridgelabz.fundonotes.note.models;
 
+import java.util.List;
+
 public class UpdateNoteDTO {
 
 	private String title;
@@ -8,14 +10,24 @@ public class UpdateNoteDTO {
 
 	private String colour;
 
-	private String remaindme;
+	private String remainder;
 
-	public String getRemaindme() {
-		return remaindme;
+	private List<Label> label;
+	
+	public List<Label> getLabel() {
+		return label;
 	}
 
-	public void setRemaindme(String remaindme) {
-		this.remaindme = remaindme;
+	public void setLabel(List<Label> label) {
+		this.label = label;
+	}
+
+	public String getRemainder() {
+		return remainder;
+	}
+
+	public void setRemainder(String remainder) {
+		this.remainder = remainder;
 	}
 
 	public String getTitle() {

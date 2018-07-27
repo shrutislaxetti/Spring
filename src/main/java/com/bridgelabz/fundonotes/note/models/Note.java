@@ -1,6 +1,7 @@
 package com.bridgelabz.fundonotes.note.models;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,22 +11,42 @@ public class Note {
 
 	@Id
 	private String noteId;
-
 	private String title;
-
 	private String description;
-
 	private Date createdAt;
-
 	private Date updatedAt;
-
-	private String colour;
-
+	private String colour ="white";
 	private Date remainder;
-
-	private String userid;
-
+	private String userId;
 	private boolean trash;
+	private boolean Archive;
+	private List<LabelDTO> label;
+
+	public boolean isArchive() {
+		return Archive;
+	}
+
+	public void setArchive(boolean archive) {
+		Archive = archive;
+	}
+
+	public boolean isPin() {
+		return pin;
+	}
+
+	public void setPin(boolean pin) {
+		this.pin = pin;
+	}
+
+	private boolean pin;
+
+	public List<LabelDTO> getLabel() {
+		return label;
+	}
+
+	public void setLabel(List<LabelDTO> list) {
+		this.label = list;
+	}
 
 	public String getColour() {
 		return colour;
@@ -84,11 +105,11 @@ public class Note {
 	}
 
 	public String getUserid() {
-		return userid;
+		return userId;
 	}
 
 	public void setUserid(String userid) {
-		this.userid = userid;
+		this.userId = userid;
 	}
 
 	public Date getRemainder() {

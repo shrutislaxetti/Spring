@@ -1,20 +1,36 @@
 package com.bridgelabz.fundonotes.note.models;
 
 import java.util.Date;
+import java.util.List;
 
 public class ViewNoteDTO {
-
+	
+	private String id;
 	private String title;
-
 	private String description;
-
 	private Date createdAt;
-
 	private Date updatedAt;
-
 	private String colour;
-
 	private Date remainder;
+	private boolean pin;
+	private boolean archive;
+	private List<LabelDTO> label;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public List<LabelDTO> getLable() {
+		return label;
+	}
+
+	public void setLable(List<LabelDTO> list) {
+		this.label = list;
+	}
 
 	public String getTitle() {
 		return title;
@@ -38,6 +54,22 @@ public class ViewNoteDTO {
 
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public boolean getPin() {
+		return pin;
+	}
+
+	public void setPin(boolean pin) {
+		this.pin = pin;
+	}
+
+	public boolean getArchive() {
+		return archive;
+	}
+
+	public void setArchive(boolean archive) {
+		this.archive = archive;
 	}
 
 	public Date getUpdatedAt() {

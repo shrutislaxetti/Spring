@@ -1,0 +1,5 @@
+
+Цsquid:S1488G"]Immediately return this expression instead of assigning it to the temporary variable "token".(§Іе–ъ€€€€8мёыб ,HЂRMINORZ
+CODE_SMELL
+Х%squid:RedundantThrowsDeclarationCheck"GRemove the redundant '!unknownSymbol!' thrown exception declaration(s).(К©“І8мёыб ,H™RMINORZ
+CODE_SMELL

@@ -1,0 +1,6 @@
+
+’squid:UselessImportCheck"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸ÎùÿÿÿÿHRMINORZ
+CODE_SMELL
+d
+squid:S106"9Replace this use of System.out or System.err by a logger.(‚š‰1HRMAJORZ
+CODE_SMELL

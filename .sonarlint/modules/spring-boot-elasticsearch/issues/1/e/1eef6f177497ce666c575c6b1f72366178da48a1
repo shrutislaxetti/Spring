@@ -1,0 +1,22 @@
+
+•squid:S1488="cImmediately return this expression instead of assigning it to the temporary variable "sourceAsMap".(Ÿ¾·üýÿÿÿÿH„:RMINORZ
+CODE_SMELL
+•squid:S1488J"cImmediately return this expression instead of assigning it to the temporary variable "sourceAsMap".(³êû©ýÿÿÿÿH…:RMINORZ
+CODE_SMELL
+Zsquid:S1481,"-Remove this unused "response" local variable.(þÆ¢¸H†:RMINORZ
+CODE_SMELL
+`squid:S1481W"3Remove this unused "deleteResponse" local variable.(Ï‰‹ŸH‡:RMINORZ
+CODE_SMELL
+Msquid:S1170"!Make this final field static too.(’§¤hHˆ:RMINORZ
+CODE_SMELL
+Ssquid:S1170"!Make this final field static too.(ñüÉ€ýÿÿÿÿH‰:RMINORZ
+CODE_SMELL
+tsquid:S2259="IA "NullPointerException" could be thrown; "getResponse" is nullable here.(Ÿ¾·üýÿÿÿÿHŠ:RMAJORZBUG
+isquid:S1854,"<Remove this useless assignment to local variable "response".(þÆ¢¸H‹:RMAJORZ
+CODE_SMELL
+osquid:S1854W"BRemove this useless assignment to local variable "deleteResponse".(Ï‰‹ŸHŒ:RMAJORZ
+CODE_SMELL
+}squid:S00116"PRename this field "INDEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’§¤hH:RMINORZ
+CODE_SMELL
+‚squid:S00116"ORename this field "TYPE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñüÉ€ýÿÿÿÿHŽ:RMINORZ
+CODE_SMELL

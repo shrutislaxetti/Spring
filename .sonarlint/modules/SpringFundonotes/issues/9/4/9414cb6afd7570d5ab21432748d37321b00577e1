@@ -1,0 +1,15 @@
+
+˜squid:S1192n"aDefine a constant instead of duplicating this literal "atlest one lowercase character, " 3 times.(Ò¶•8ñÀÆáÊ,HRCRITICALZ
+CODE_SMELL
+squid:S1192n"WDefine a constant instead of duplicating this literal "and atleast one number" 3 times.(Ò¶•8ñÀÆáÊ,HœRCRITICALZ
+CODE_SMELL
+squid:S1192n"XDefine a constant instead of duplicating this literal "one special character, " 3 times.(Ò¶•8ñÀÆáÊ,HšRCRITICALZ
+CODE_SMELL
+usquid:S1126X"AReplace this if-then-else statement by a single return statement.(äÉüæ8ñÀÆáÊ,H RMINORZ
+CODE_SMELL
+usquid:S1126P"AReplace this if-then-else statement by a single return statement.(äÉüæ8ñÀÆáÊ,HŸRMINORZ
+CODE_SMELL
+³squid:S1192m"wDefine a constant instead of duplicating this literal "Password should have atleast one uppercase character, " 3 times.(Áû–÷ıÿÿÿÿ8ñÀÆáÊ,H›RCRITICALZ
+CODE_SMELL
+usquid:S1126H"AReplace this if-then-else statement by a single return statement.(äÉüæ8ñÀÆáÊ,HRMINORZ
+CODE_SMELL

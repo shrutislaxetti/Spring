@@ -1,0 +1,15 @@
+
+j
+squid:S106y"9Replace this use of System.out or System.err by a logger.(·İå‚ıÿÿÿÿHHRMAJORZ
+CODE_SMELL
+nsquid:S1126?"AReplace this if-then-else statement by a single return statement.(äÉüæHHRMINORZ
+CODE_SMELL
+e
+squid:S106x"9Replace this use of System.out or System.err by a logger.(á©ÔéH‘HRMAJORZ
+CODE_SMELL
+‡squid:S1192U"ÊDefine a constant instead of duplicating this literal "Invalid Password !!..Password must contain atleat 1 special character,Upper_case letter nad minimum of 8 characters and numbres within it" 3 times.(£ı¤éùÿÿÿÿ8¹”¸Ë,H’HRCRITICALZ
+CODE_SMELL
+nsquid:S11267"AReplace this if-then-else statement by a single return statement.(äÉüæH“HRMINORZ
+CODE_SMELL
+nsquid:S1126/"AReplace this if-then-else statement by a single return statement.(äÉüæH”HRMINORZ
+CODE_SMELL

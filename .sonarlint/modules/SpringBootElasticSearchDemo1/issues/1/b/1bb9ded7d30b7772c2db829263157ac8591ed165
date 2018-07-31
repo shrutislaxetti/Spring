@@ -1,0 +1,20 @@
+
+asquid:S1068"(Remove this unused "TYPE" private field.(ñüÉ€ýÿÿÿÿ8Ü‹ÞƒÎ,Hè7RMAJORZ
+CODE_SMELL
+isquid:S1068"0Remove this unused "objectMapper" private field.(«çœšþÿÿÿÿ8Ü‹ÞƒÎ,Hê7RMAJORZ
+CODE_SMELL
+Tsquid:S1170
+"!Make this final field static too.(’§¤h8Ü‹ÞƒÎ,Hë7RMINORZ
+CODE_SMELL
+„squid:S00116
+"PRename this field "INDEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’§¤h8Ü‹ÞƒÎ,Hí7RMINORZ
+CODE_SMELL
+\squid:S1068
+")Remove this unused "INDEX" private field.(’§¤h8Ü‹ÞƒÎ,Hç7RMAJORZ
+CODE_SMELL
+‰squid:S00116"ORename this field "TYPE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñüÉ€ýÿÿÿÿ8Ü‹ÞƒÎ,Hî7RMINORZ
+CODE_SMELL
+Zsquid:S1170"!Make this final field static too.(ñüÉ€ýÿÿÿÿ8Ü‹ÞƒÎ,Hì7RMINORZ
+CODE_SMELL
+ksquid:S1068"7Remove this unused "restHighLevelClient" private field.(Èø£‹8Ü‹ÞƒÎ,Hé7RMAJORZ
+CODE_SMELL

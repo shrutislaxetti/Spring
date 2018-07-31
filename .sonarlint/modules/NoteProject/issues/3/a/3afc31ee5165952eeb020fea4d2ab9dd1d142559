@@ -1,0 +1,11 @@
+
+csquid:S1068"/Remove this unused "createdDate" private field.(–§öæ8¥ûĞëÊ,H³RMAJORZ
+CODE_SMELL
+bsquid:S1068")Remove this unused "title" private field.(åõò¹ıÿÿÿÿ8¥ûĞëÊ,H±RMAJORZ
+CODE_SMELL
+squid:S00116"VRename this field "Description" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º¼Â­ùÿÿÿÿ8¥ûĞëÊ,H´RMINORZ
+CODE_SMELL
+hsquid:S1068"/Remove this unused "Description" private field.(º¼Â­ùÿÿÿÿ8¥ûĞëÊ,H²RMAJORZ
+CODE_SMELL
+­squid:UselessImportCheck"gRemove this unused import 'org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs'.(‹½•Öúÿÿÿÿ8¥ûĞëÊ,HµRMINORZ
+CODE_SMELL

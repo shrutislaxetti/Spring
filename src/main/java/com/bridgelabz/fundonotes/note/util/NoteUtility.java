@@ -23,8 +23,8 @@ public class NoteUtility {
 
 	public static void validateNote(CreateNoteDTO noteDTO) throws NoteNullPointerException {
 
-		if (noteDTO.getTitle() == null || noteDTO.getTitle().isEmpty() && noteDTO.getDescription() == null
-				|| noteDTO.getDescription().isEmpty() && noteDTO.getColour() == null || noteDTO.getColour().isEmpty()) {
+		if (noteDTO.getTitle() == null || noteDTO.getTitle().trim().length()==0 && noteDTO.getDescription() == null
+				|| noteDTO.getDescription().trim().length()==0 && noteDTO.getColour() == null || noteDTO.getColour().trim().length()==0) {
 			throw new NoteNullPointerException("Failed to Create Note ..Fileds should not be empty");
 		}
 	}

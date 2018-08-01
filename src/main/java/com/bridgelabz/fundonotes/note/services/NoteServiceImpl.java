@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import com.bridgelabz.fundonotes.note.exceptions.DateException;
 import com.bridgelabz.fundonotes.note.exceptions.LabelException;
@@ -19,7 +20,9 @@ import com.bridgelabz.fundonotes.note.models.LabelDTO;
 import com.bridgelabz.fundonotes.note.models.Note;
 import com.bridgelabz.fundonotes.note.models.UpdateNoteDTO;
 import com.bridgelabz.fundonotes.note.models.ViewNoteDTO;
+import com.bridgelabz.fundonotes.note.repository.LabelElasticRepo;
 import com.bridgelabz.fundonotes.note.repository.LabelRepository;
+import com.bridgelabz.fundonotes.note.repository.NoteElasticSearchRepo;
 import com.bridgelabz.fundonotes.note.repository.NoteRepository;
 import com.bridgelabz.fundonotes.note.util.NoteUtility;
 
@@ -31,6 +34,15 @@ public class NoteServiceImpl implements NoteService {
 
 	@Autowired
 	private LabelRepository labelRepository;
+
+	@Autowired
+	private NoteElasticSearchRepo noteelasticrepo;
+
+	@Autowired
+	private LabelElasticRepo labelelasticrepo;
+
+	@Autowired
+	private Environment env;
 
 	@Override
 	public ViewNoteDTO createNote(CreateNoteDTO createNoteDTO, String userId)
@@ -45,7 +57,7 @@ public class NoteServiceImpl implements NoteService {
 			note.setColour(createNoteDTO.getColour());
 		}
 		note.setRemainder(createNoteDTO.getRemainder());
-		note.setUserid(userId);
+		note.setUserId(userId);
 		note.setCreatedAt(NoteUtility.createdAt());
 		note.setUpdatedAt(NoteUtility.createdAt());
 		note.setArchive(createNoteDTO.getArchive());
@@ -56,8 +68,9 @@ public class NoteServiceImpl implements NoteService {
 		for (int i = 0; i < label.size(); i++) {
 			if (label.get(i).getLabelName() != null || label.get(i).getLabelName().trim().length() != 0) {
 
-				Optional<Label> optionallabel = labelRepository.findByLabelName(label.get(i).getLabelName());
-
+				// Optional<Label> optionallabel =
+				// labelRepository.findByLabelName(label.get(i).getLabelName());
+				Optional<Label> optionallabel = labelelasticrepo.findByLabelName(label.get(i).getLabelName());
 				if (optionallabel.isPresent()) {
 					List<LabelDTO> list = new ArrayList<>();
 					LabelDTO newlabel = new LabelDTO();
@@ -68,13 +81,13 @@ public class NoteServiceImpl implements NoteService {
 				} else {
 					Label label1 = new Label();
 					label1.setLabelName(label.get(i).getLabelName());
-					label1.setLabelId(label.get(i).getLabelId());
+					label1.setLabelId(optionallabel.get().getLabelId());
 					label1.setUserId(userId);
 					labelRepository.save(label1);
-
+					labelelasticrepo.save(label1);
 					List<LabelDTO> list2 = new ArrayList<>();
 					LabelDTO newlabel = new LabelDTO();
-					newlabel.setLabelId(optionallabel.get().getLabelId());
+					newlabel.setLabelId(label.get(i).getLabelId());
 					newlabel.setLabelName(label.get(i).getLabelName());
 					list2.add(newlabel);
 					note.setLabel(list2);
@@ -82,7 +95,7 @@ public class NoteServiceImpl implements NoteService {
 			}
 		}
 		noterespositry.save(note);
-
+		noteelasticrepo.save(note);
 		ViewNoteDTO viewnote = new ViewNoteDTO();
 		viewnote.setId(note.getNoteId());
 		viewnote.setTitle(note.getTitle());
@@ -100,15 +113,15 @@ public class NoteServiceImpl implements NoteService {
 	public void updateNote(UpdateNoteDTO updateNoteDTO, String userId, String noteId)
 			throws UnauthorizedException, NoteNullPointerException, NoteNotFoundException {
 
-		Optional<Note> optionalnote = noterespositry.findById(noteId);
-
+		// Optional<Note> optionalnote = noterespositry.findById(noteId);
+		Optional<Note> optionalnote = noteelasticrepo.findById(noteId);
 		if (!optionalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
 
-		if (!userId.equals(optionalnote.get().getUserid())) {
+		if (!optionalnote.get().getUserId().equals(userId)) {
 
-			throw new UnauthorizedException("User Not Present");
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 		}
 
 		Note note = optionalnote.get();
@@ -117,63 +130,69 @@ public class NoteServiceImpl implements NoteService {
 		note.setColour(updateNoteDTO.getColour());
 		note.setUpdatedAt(new Date());
 		noterespositry.save(note);
+		noteelasticrepo.save(note);
 	}
 
 	@Override
 	public void deleteNote(String userId, String noteId) throws UnauthorizedException, NoteNotFoundException {
 
-		Optional<Note> optionalnote = noterespositry.findById(noteId);
-
+		// Optional<Note> optionalnote = noterespositry.findById(noteId);
+		Optional<Note> optionalnote = noteelasticrepo.findById(noteId);
 		if (!optionalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
 
-		if (!userId.equals(optionalnote.get().getUserid())) {
-			throw new UnauthorizedException("User Not Present");
+		if (!userId.equals(optionalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 
 		}
 
 		Note note = optionalnote.get();
 		note.setTrash(true);
 		noterespositry.save(note);
-
+		noteelasticrepo.save(note);
 	}
 
 	@Override
 	public void deleteorrestore(String userId, String noteId, boolean isBoolean)
 			throws UnauthorizedException, NoteException, NoteNotFoundException {
 
-		Optional<Note> note = noterespositry.findById(noteId);
+		// Optional<Note> note = noterespositry.findById(noteId);
+		Optional<Note> note = noteelasticrepo.findById(noteId);
 		if (!note.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(note.get().getUserid())) {
-			throw new UnauthorizedException(" User not Present ");
+		if (!userId.equals(note.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 		}
 
 		if (!note.get().isTrash()) {
-			throw new NoteException("Note is Not TrashedAt!!");
+			throw new NoteException(env.getProperty("NotTrashed"));
 		}
+
 		if (isBoolean) {
 			noterespositry.deleteById(noteId);
+			noteelasticrepo.deleteById(noteId);
 		} else {
 			Note newnote = note.get();
 			newnote.setTrash(false);
 			noterespositry.save(newnote);
+			noteelasticrepo.save(newnote);
 		}
 	}
 
 	@Override
 	public void emptyTrash(String userId) throws UnauthorizedException, NoteNotFoundException {
 
-		List<Note> list = noterespositry.findAllByUserId(userId);
-
+		// List<Note> list = noterespositry.findAllByUserId(userId);
+		List<Note> list = noteelasticrepo.findAllByUserId(userId);
 		List<Note> notelist = new LinkedList<>();
 		for (int i = 0; i < list.size(); i++) {
 			notelist.add(list.get(i));
 
 			if (notelist.get(i).isTrash()) {
 				noterespositry.delete(notelist.get(i));
+				noteelasticrepo.delete(notelist.get(i));
 			}
 		}
 
@@ -182,14 +201,14 @@ public class NoteServiceImpl implements NoteService {
 	@Override
 	public Note displayNote(String userId, String noteId) throws UnauthorizedException, NoteNotFoundException {
 
-		Optional<Note> optinallist = noterespositry.findById(noteId);
-
+		// Optional<Note> optinallist = noterespositry.findById(noteId);
+		Optional<Note> optinallist = noteelasticrepo.findById(noteId);
 		if (!optinallist.isPresent()) {
-			throw new NoteNotFoundException(" Note not found ");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(optinallist.get().getUserid())) {
+		if (!userId.equals(optinallist.get().getUserId())) {
 
-			throw new UnauthorizedException(" User not Present ");
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 		}
 
 		return optinallist.get();
@@ -198,8 +217,8 @@ public class NoteServiceImpl implements NoteService {
 
 	public List<ViewNoteDTO> viewAllNote(String userId) {
 
-		List<Note> noteList = noterespositry.findAllByUserId(userId);
-
+		// List<Note> noteList = noterespositry.findAllByUserId(userId);
+		List<Note> noteList = noteelasticrepo.findAllByUserId(userId);
 		List<ViewNoteDTO> viewNoteList = new LinkedList<>();
 
 		for (int i = 0; i < noteList.size(); i++) {
@@ -229,16 +248,20 @@ public class NoteServiceImpl implements NoteService {
 
 		NoteUtility.validateDate(date);
 
-		Optional<Note> optionalnote = noterespositry.findById(noteId);
+		// Optional<Note> optionalnote = noterespositry.findById(noteId);
+		Optional<Note> optionalnote = noteelasticrepo.findById(noteId);
 		if (!optionalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not Found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(optionalnote.get().getUserid())) {
-			throw new UnauthorizedException("User not present");
+
+		if (!userId.equals(optionalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 		}
+
 		Note note = optionalnote.get();
 		note.setRemainder(date);
 		noterespositry.save(note);
+		noteelasticrepo.save(note);
 	}
 
 	@Override
@@ -247,37 +270,41 @@ public class NoteServiceImpl implements NoteService {
 
 		NoteUtility.validateDate(date);
 
-		Optional<Note> optionalnote = noterespositry.findById(noteId);
+		// Optional<Note> optionalnote = noterespositry.findById(noteId);
+		Optional<Note> optionalnote = noteelasticrepo.findById(noteId);
+
 		if (!optionalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(optionalnote.get().getUserid())) {
-			throw new UnauthorizedException("User not present");
+
+		if (!userId.equals(optionalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 		}
+
 		Note note = optionalnote.get();
 		note.setRemainder(null);
 		noterespositry.save(note);
+		noteelasticrepo.save(note);
 	}
 
 	@Override
 	public void addpinNote(String userId, String noteId)
 			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
-		Optional<Note> optinalnote = noterespositry.findById(noteId);
+		// Optional<Note> optinalnote = noterespositry.findById(noteId);
+		Optional<Note> optinalnote = noteelasticrepo.findById(noteId);
 		if (!optinalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(optinalnote.get().getUserid())) {
-			throw new UnauthorizedException("User not Present");
+		if (!userId.equals(optinalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 
-		}
-		if (optinalnote.get().isPin()) {
-			throw new NoteException("Note is Already Pinned");
 		}
 
 		Note note = optinalnote.get();
 		note.setPin(true);
 		noterespositry.save(note);
+		noteelasticrepo.save(note);
 
 	}
 
@@ -286,15 +313,13 @@ public class NoteServiceImpl implements NoteService {
 			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		Optional<Note> optinalnote = noterespositry.findById(noteId);
-		if (!optinalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
-		}
-		if (!userId.equals(optinalnote.get().getUserid())) {
-			throw new UnauthorizedException("User not Present");
 
+		if (!optinalnote.isPresent()) {
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!optinalnote.get().isPin()) {
-			throw new NoteException("Note is Un-Pinned!!");
+		if (!userId.equals(optinalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
+
 		}
 
 		Note note = optinalnote.get();
@@ -308,15 +333,16 @@ public class NoteServiceImpl implements NoteService {
 			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		Optional<Note> optinalnote = noterespositry.findById(noteId);
+
 		if (!optinalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(optinalnote.get().getUserid())) {
-			throw new UnauthorizedException("User not Present");
+		if (!userId.equals(optinalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 
 		}
 		if (!optinalnote.get().isPin()) {
-			throw new NoteException("Note is Archived Already");
+			throw new NoteException(env.getProperty("ArchiveNote"));
 		}
 
 		Note note = optinalnote.get();
@@ -330,15 +356,17 @@ public class NoteServiceImpl implements NoteService {
 			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		Optional<Note> optinalnote = noterespositry.findById(noteId);
+
 		if (!optinalnote.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
-		if (!userId.equals(optinalnote.get().getUserid())) {
-			throw new UnauthorizedException("User not Present");
+
+		if (!userId.equals(optinalnote.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 
 		}
 		if (!optinalnote.get().isPin()) {
-			throw new NoteException("Note is Not Archived");
+			throw new NoteException(env.getProperty("UnArchiveNote"));
 		}
 
 		Note note = optinalnote.get();
@@ -349,8 +377,8 @@ public class NoteServiceImpl implements NoteService {
 	@Override
 	public List<ViewNoteDTO> viewAllArchiveNote(String userId) {
 
-		List<Note> noteList = noterespositry.findAllByUserId(userId);
-
+		// List<Note> noteList = noterespositry.findAllByUserId(userId);
+		List<Note> noteList = noteelasticrepo.findAllByUserId(userId);
 		List<ViewNoteDTO> viewNoteList = new LinkedList<>();
 
 		for (int i = 0; i < noteList.size(); i++) {
@@ -373,28 +401,28 @@ public class NoteServiceImpl implements NoteService {
 	}
 
 	@Override
-	public void createLabel(String labelName, String userId) throws LabelException, UnauthorizedException {
-
-		if (!noterespositry.findById(userId).isPresent()) {
-
-			throw new UnauthorizedException("Invalid token");
-		}
+	public LabelDTO createLabel(String labelName, String userId) throws LabelException, UnauthorizedException {
 
 		if (labelRepository.findByLabelName(labelName).isPresent()) {
-			throw new LabelException("Label already exists");
+			throw new LabelException(env.getProperty("LabelNotFound"));
 		}
 
 		Label label = new Label();
 		label.setLabelName(labelName);
 		label.setUserId(userId);
 		labelRepository.save(label);
+		labelelasticrepo.save(label);
+		LabelDTO labelDto = new LabelDTO();
+		labelDto.setLabelId(labelName);
+		labelDto.setLabelName(labelName);
+		return labelDto;
 	}
 
 	@Override
 	public List<Label> viewLabels(String userId) throws UnauthorizedException {
 
-		List<Label> list = labelRepository.findAllByuserId(userId);
-
+		// List<Label> list = labelRepository.findAllByuserId(userId);
+		List<Label> list = labelelasticrepo.findAllByuserId(userId);
 		List<Label> newlist = new LinkedList<>();
 		for (int i = 0; i < list.size(); i++) {
 			newlist.add(list.get(i));
@@ -405,28 +433,30 @@ public class NoteServiceImpl implements NoteService {
 	@Override
 	public void deleteLabel(String userId, String labelId) throws UnauthorizedException, LabelException {
 
-		Optional<Label> optinallabel = labelRepository.findByLabelId(labelId);
-
-		if (!optinallabel.isPresent()) {
-			throw new LabelException("Label Not found");
+		// Optional<Label> optinalLabel = labelRepository.findByLabelId(labelId);
+		Optional<Label> optinalLabel = labelelasticrepo.findByLabelId(labelId);
+		if (!optinalLabel.isPresent()) {
+			throw new LabelException(env.getProperty("LabelNotFound"));
 		}
 
-		Label newlabel = optinallabel.get();
-		labelRepository.delete(newlabel);
+		if (!userId.equals(optinalLabel.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
+		}
 
+		Label label = optinalLabel.get();
+		labelRepository.delete(label);
+		labelelasticrepo.delete(label);
 		List<Note> notelist = noterespositry.findAllByUserId(userId);
 
 		for (int i = 0; i < notelist.size(); i++) {
-			Note note1 = notelist.get(i);
+			Note note = notelist.get(i);
 			for (int j = 0; j < notelist.get(i).getLabel().size(); j++) {
-				if (note1.getLabel().get(j).getLabelId().equals(labelId)) {
-					note1.getLabel().remove(i);
-					break;
-				} else {
-					throw new LabelException("Label Not found");
+				if (note.getLabel().get(j).getLabelId().equals(labelId)) {
+					note.getLabel().remove(i);
 				}
 			}
-			noterespositry.save(note1);
+			noterespositry.save(note);
+			noteelasticrepo.save(note);
 		}
 	}
 
@@ -434,25 +464,27 @@ public class NoteServiceImpl implements NoteService {
 	public void addLabeltoNote(String userId, String noteId, String labelName)
 			throws UnauthorizedException, NoteNotFoundException, LabelException {
 
-		Optional<Note> note = noterespositry.findById(noteId);
+		// Optional<Note> note = noterespositry.findById(noteId);
+		Optional<Note> note = noteelasticrepo.findById(noteId);
 
 		if (!note.isPresent()) {
-			throw new NoteNotFoundException("Note not found");
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
 		}
 
-		if (!userId.equals(note.get().getUserid())) {
-			throw new UnauthorizedException("User not Present");
+		if (!userId.equals(note.get().getUserId())) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
 		}
 
 		NoteUtility.validateLabel(labelName);
 
-		Optional<Label> label = labelRepository.findByLabelName(labelName);
-
+		// Optional<Label> label = labelRepository.findByLabelName(labelName);
+		Optional<Label> label = labelelasticrepo.findByLabelName(labelName);
 		if (!label.isPresent()) {
 			Label label1 = new Label();
 			label1.setLabelName(labelName);
 			label1.setUserId(userId);
 			labelRepository.save(label1);
+			labelelasticrepo.save(label1);
 		} else {
 
 			Note note1 = note.get();
@@ -465,15 +497,39 @@ public class NoteServiceImpl implements NoteService {
 			note1.setLabel(label2);
 
 			noterespositry.save(note1);
+			noteelasticrepo.save(note1);
 		}
+	}
+
+	@Override
+	public void addColourtoNote(String userId, String noteId, String colour)
+			throws NoteException, NoteNotFoundException, UnauthorizedException {
+
+		// Optional<Note> optinalnote = noterespositry.findById(noteId);
+		Optional<Note> optinalnote = noteelasticrepo.findById(noteId);
+		if (!optinalnote.isPresent()) {
+			throw new NoteNotFoundException(env.getProperty("NoteNotFound"));
+		}
+
+		if (!optinalnote.get().getUserId().equals(userId)) {
+			throw new UnauthorizedException(env.getProperty("UserNotfound"));
+		}
+
+		if (colour == null || colour.trim().length() == 0) {
+			throw new NoteException(env.getProperty("Colour"));
+		}
+
+		Note note = optinalnote.get();
+		note.setColour(colour);
+		noterespositry.save(note);
+		noteelasticrepo.save(note);
 	}
 
 	@Override
 	public void updateLabel(String userId, String labelId, String labelName)
 			throws UnauthorizedException, NoteNotFoundException, LabelException {
-
-		Optional<Label> optinallabel = labelRepository.findById(labelId);
-
+		// Optional<Label> optinallabel = labelRepository.findById(labelId);
+		Optional<Label> optinallabel = labelelasticrepo.findById(labelId);
 		if (!optinallabel.isPresent()) {
 			throw new LabelException("Label Not found");
 		}
@@ -481,32 +537,32 @@ public class NoteServiceImpl implements NoteService {
 		Label newlabel = optinallabel.get();
 		newlabel.setLabelName(labelName);
 		labelRepository.save(newlabel);
-
-		List<Note> notelist = noterespositry.findAllByUserId(userId);
-
+		labelelasticrepo.save(newlabel);
+		// List<Note> notelist = noterespositry.findAllByUserId(userId);
+		List<Note> notelist = noteelasticrepo.findAllByUserId(userId);
 		for (int i = 0; i < notelist.size(); i++) {
 			Note note1 = notelist.get(i);
 			for (int j = 0; j < notelist.get(i).getLabel().size(); j++) {
 				if (note1.getLabel().get(j).getLabelId().equals(labelId)) {
 					note1.getLabel().get(j).setLabelName(labelName);
-					break;
-				} else {
-					throw new LabelException("Label not found");
 				}
 			}
 			noterespositry.save(note1);
+			noteelasticrepo.save(note1);
 		}
+
 	}
 
 	@Override
 	public void removeLabelFromNote(String userId, String labelId, String noteId)
 			throws NoteNotFoundException, UnauthorizedException, LabelException {
 
-		Optional<Note> optinalnote = noterespositry.findById(noteId);
+		// Optional<Note> optinalnote = noterespositry.findById(noteId);
+		Optional<Note> optinalnote = noteelasticrepo.findById(noteId);
 		if (!optinalnote.isPresent()) {
 			throw new NoteNotFoundException("Note not Found");
 		}
-		if (!optinalnote.get().getUserid().equals(userId)) {
+		if (!optinalnote.get().getUserId().equals(userId)) {
 			throw new UnauthorizedException(" Unauthorized User");
 		}
 		Note note = optinalnote.get();
@@ -515,11 +571,11 @@ public class NoteServiceImpl implements NoteService {
 		for (int i = 0; i < labellist.size(); i++) {
 			if (labellist.get(i).getLabelId().equals(labelId)) {
 				labellist.remove(i);
-				break;
-			} else {
-				throw new LabelException("Label not found");
+
 			}
+
 		}
 		noterespositry.save(note);
+		noteelasticrepo.save(note);
 	}
 }

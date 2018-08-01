@@ -11,6 +11,7 @@ import com.bridgelabz.fundonotes.note.exceptions.NoteNullPointerException;
 import com.bridgelabz.fundonotes.note.exceptions.UnauthorizedException;
 import com.bridgelabz.fundonotes.note.models.CreateNoteDTO;
 import com.bridgelabz.fundonotes.note.models.Label;
+import com.bridgelabz.fundonotes.note.models.LabelDTO;
 import com.bridgelabz.fundonotes.note.models.Note;
 import com.bridgelabz.fundonotes.note.models.UpdateNoteDTO;
 import com.bridgelabz.fundonotes.note.models.ViewNoteDTO;
@@ -142,7 +143,7 @@ public interface NoteService {
 	 * @param isBoolean
 	 * @throws UnauthorizedException
 	 * @throws NoteException
-	 * @throws NoteNotFoundException 
+	 * @throws NoteNotFoundException
 	 */
 	public void deleteorrestore(String userId, String noteId, boolean isBoolean)
 			throws UnauthorizedException, NoteException, NoteNotFoundException;
@@ -153,7 +154,7 @@ public interface NoteService {
 	 * @throws LabelException
 	 * @throws UnauthorizedException
 	 */
-	public void createLabel(String labelName, String userId) throws LabelException, UnauthorizedException;
+	public LabelDTO createLabel(String labelName, String userId) throws LabelException, UnauthorizedException;
 
 	/**
 	 * @param userId
@@ -200,7 +201,19 @@ public interface NoteService {
 	 * @throws UnauthorizedException
 	 * @throws LabelException
 	 */
-	public void removeLabelFromNote(String userId, String labelId, String noteId)
-			throws NoteNotFoundException, UnauthorizedException, LabelException;
+	public void removeLabelFromNote(String userId, String labelId, String noteId) throws NoteNotFoundException, UnauthorizedException, LabelException;
+
+	/**
+	 * throws NoteNotFoundException, UnauthorizedException, LabelException;
+	 * 
+	 * @param userid
+	 * @param noteId
+	 * @param colour
+	 * @throws NoteNotFoundException 
+	 * @throws UnauthorizedException 
+	 * @throws NoteException 
+	 */
+
+	public void addColourtoNote(String userid, String noteId, String colour) throws NoteException, NoteNotFoundException, UnauthorizedException;
 
 }

@@ -12,6 +12,8 @@ public interface NoteRepository extends MongoRepository<Note, String> {
 	
 	public Optional<Note> findByUserId(String userId);
 
+	public void save(Optional<Note> optinalnote);
+
 	
 
 }

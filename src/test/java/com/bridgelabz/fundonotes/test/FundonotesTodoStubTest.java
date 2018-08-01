@@ -50,11 +50,11 @@ public class FundonotesTodoStubTest {
 				.andExpect(jsonPath("$.status").value(201));
 	}
 
-	// @Test
+ //@Test
 	public void activateTest() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/activate").header("token",
 				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJzaHJ1dGlsYXhldHRpQGdtYWlsLmNvbSIsImlhdCI6MTUzMjA2NzU5NCwic3ViIjoic2hydXRpbGF4ZXR0aUBnbWFpbC5jb20ifQ.Y04eVABJi93EX7VJtf6MUYo7Ycc8mD6zO3frSyUJeAo")
-				.accept(MediaType.TEXT_PLAIN_VALUE)).andExpect(jsonPath("$.message").value("Account activated"))
+				.accept(MediaType.TEXT_PLAIN_VALUE)).andExpect(jsonPath("$.message").value("Failed to Activate the User"))
 				.andExpect(jsonPath("$.status").value(201));
 	}
 
@@ -75,7 +75,7 @@ public class FundonotesTodoStubTest {
 				.andExpect(jsonPath("$.status").value(201));
 	}
 
-	/************************* Fundo Node Test ******************************/
+	//************************* Fundo Node Test ******************************//*
 
 	//@Test
 	public void updateNoteTest() throws Exception {
@@ -88,7 +88,7 @@ public class FundonotesTodoStubTest {
 
 	}
 	
-	@Test
+	//@Test
 	public void createNoteTest() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post("/create").contentType(MediaType.APPLICATION_JSON).requestAttr("token",
 				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1YjUxNjZiN2JmOWZiNzFjMTgxNWIzZTMiLCJpYXQiOjE1MzI0MTEyNTUsInN1YiI6IjViNTE2NmI3YmY5ZmI3MWMxODE1YjNlMyJ9.DUFH4TG0VQhl4jnl5BUZNLke-ERI71TFz8LwpoO1FIc")
@@ -97,6 +97,23 @@ public class FundonotesTodoStubTest {
 
 	}
 	
+	//@Test
+	public void viewAllNotesTest() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.put("/viewAllNote").requestAttr("token",
+				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1YjUxNjZiN2JmOWZiNzFjMTgxNWIzZTMiLCJpYXQiOjE1MzI0MTEyNTUsInN1YiI6IjViNTE2NmI3YmY5ZmI3MWMxODE1YjNlMyJ9.DUFH4TG0VQhl4jnl5BUZNLke-ERI71TFz8LwpoO1FIc")
+				);
+				
+	}
+	
+	//@Test
+	public void displayNoteTest() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.put("/update/{noteId}", "5b53305cbf9fb74f82ea7742").contentType(MediaType.APPLICATION_JSON).requestAttr("token",
+				"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1YjUxNjZiN2JmOWZiNzFjMTgxNWIzZTMiLCJpYXQiOjE1MzI0MTEyNTUsInN1YiI6IjViNTE2NmI3YmY5ZmI3MWMxODE1YjNlMyJ9.DUFH4TG0VQhl4jnl5BUZNLke-ERI71TFz8LwpoO1FIc")
+				.content(
+						"{ \"title\" :\"testing\",\"description\":\"today\",\"colour\" :\"blue\",\"remainder\" :\"2018-08-21T13:08:44.165Z\",\"pin\" :\"true\"}"));
+				
+
+	}
 	
 	
 }

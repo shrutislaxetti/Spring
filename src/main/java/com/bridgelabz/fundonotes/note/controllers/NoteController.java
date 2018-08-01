@@ -21,7 +21,6 @@ import com.bridgelabz.fundonotes.note.exceptions.NoteNotFoundException;
 import com.bridgelabz.fundonotes.note.exceptions.NoteNullPointerException;
 import com.bridgelabz.fundonotes.note.exceptions.UnauthorizedException;
 import com.bridgelabz.fundonotes.note.models.CreateNoteDTO;
-import com.bridgelabz.fundonotes.note.models.Label;
 import com.bridgelabz.fundonotes.note.models.Note;
 import com.bridgelabz.fundonotes.note.models.UpdateNoteDTO;
 import com.bridgelabz.fundonotes.note.models.ViewNoteDTO;
@@ -73,7 +72,7 @@ public class NoteController {
 	@PutMapping(value = "/update/{noteId}")
 	public ResponseEntity<Response> updateNote(@RequestBody UpdateNoteDTO updateNote, HttpServletRequest req,
 			@PathVariable String noteId) throws UnauthorizedException, NoteNullPointerException, NoteNotFoundException {
-		String userId = (String) req.getAttribute("userId ");
+		String userId = (String) req.getAttribute("userId");
 		noteService.updateNote(updateNote, userId, noteId);
 		Response response = new Response();
 		response.setMessage("Note Updated Successfully!!");
@@ -109,8 +108,8 @@ public class NoteController {
 	 * @throws NoteNotFoundException
 	 */
 
-	@PostMapping(value = "/viewAllNote")
-	public ResponseEntity<List<ViewNoteDTO>> viewAllNote(HttpServletRequest req) throws NoteNotFoundException {
+	@GetMapping(value = "/viewAllNote")
+	public ResponseEntity<List<ViewNoteDTO>> viewAllNote(HttpServletRequest req) {
 		String userId = (String) req.getAttribute("userId");
 		List<ViewNoteDTO> list = noteService.viewAllNote(userId);
 
@@ -149,11 +148,12 @@ public class NoteController {
 	 * @return
 	 * @throws UnauthorizedException
 	 * @throws NoteException
+	 * @throws NoteNotFoundException 
 	 */
 
 	@DeleteMapping(value = "/deleteforeverOrRestore/{noteId}")
 	public ResponseEntity<Response> deleteTrashNote(HttpServletRequest req, @PathVariable String noteId,
-			@RequestParam boolean isBoolean) throws UnauthorizedException, NoteException {
+			@RequestParam boolean isBoolean) throws UnauthorizedException, NoteException, NoteNotFoundException {
 
 		String userId = (String) req.getAttribute("userId");
 		noteService.deleteorrestore(userId, noteId, isBoolean);
@@ -224,10 +224,13 @@ public class NoteController {
 			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		String userId = (String) req.getAttribute("userId");
+		
 		noteService.addpinNote(userId, noteId);
+		
 		Response response = new Response();
 		response.setMessage("Note Pinned successfully ");
 		response.setStatus(203);
+		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 
 	}
@@ -244,13 +247,16 @@ public class NoteController {
 
 	@PutMapping(value = "/removepin/{noteId}")
 	public ResponseEntity<Response> removePinNote(HttpServletRequest req, @PathVariable String noteId)
-			throws UnauthorizedException, NoteNotFoundException, DateException, NoteException {
+			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		String userId = (String) req.getAttribute("userId");
+		
 		noteService.removepinNote(userId, noteId);
+		
 		Response response = new Response();
 		response.setMessage("Note Un-Pinned");
 		response.setStatus(204);
+
 		return new ResponseEntity<>(response, HttpStatus.OK);
 
 	}
@@ -269,13 +275,16 @@ public class NoteController {
 
 	@PutMapping(value = "/addArchive/{noteId}")
 	public ResponseEntity<Response> addArchiveNote(HttpServletRequest req, @PathVariable String noteId)
-			throws UnauthorizedException, NoteNotFoundException, DateException, NoteException {
+			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		String userId = (String) req.getAttribute("userId");
+		
 		noteService.addArchivePinNote(userId, noteId);
+		
 		Response response = new Response();
 		response.setMessage("Note Archived!!");
 		response.setStatus(205);
+		
 		return new ResponseEntity<>(response, HttpStatus.OK);
 
 	}
@@ -297,6 +306,7 @@ public class NoteController {
 			throws UnauthorizedException, NoteNotFoundException, NoteException {
 
 		String userId = (String) req.getAttribute("userId");
+		
 		noteService.removeArchivePinNote(userId, noteId);
 		Response response = new Response();
 		response.setMessage("Note Un-Archived!!");
@@ -348,140 +358,26 @@ public class NoteController {
 	}
 
 	/**
-	 * Api to Create Label
-	 * 
 	 * @param req
-	 * @param labelName
-	 * @return
-	 * @throws LabelException
-	 * @throws UnauthorizedException
-	 */
-
-	@PostMapping(value = "/createLabel{lableName}")
-	public ResponseEntity<Response> createLabel(HttpServletRequest req, @PathVariable String labelName)
-			throws LabelException, UnauthorizedException {
-
-		String userId = (String) req.getAttribute("userId");
-		noteService.createLabel(labelName, userId);
-		Response response = new Response();
-		response.setMessage("Label Created Succesfully");
-		response.setStatus(207);
-		return new ResponseEntity<>(response, HttpStatus.CREATED);
-
-	}
-
-	/**
-	 * Api to Add Label To Note
-	 * 
-	 * @param token
 	 * @param noteId
 	 * @param labelName
 	 * @return
 	 * @throws UnauthorizedException
 	 * @throws NoteNotFoundException
 	 * @throws LabelException
+	 * @throws NoteException 
 	 */
-
-	@PutMapping(value = "/addLabel/{noteId}/{labelName}")
-	public ResponseEntity<Response> addLabel(HttpServletRequest req, @PathVariable String noteId,
-			@PathVariable String labelName) throws UnauthorizedException, NoteNotFoundException, LabelException {
+	@PutMapping(value = "/changeColour/{noteId}")
+	public ResponseEntity<Response> changecolour(HttpServletRequest req, @PathVariable String noteId,
+			@RequestParam String colour) throws NoteException, NoteNotFoundException, UnauthorizedException {
 
 		String userid =(String) req.getAttribute("userId");
-		noteService.addLabeltoNote(userid, noteId, labelName);
+		noteService.addColourtoNote(userid, noteId, colour);
 		Response response = new Response();
-		response.setMessage("Label Added successfully ");
-		response.setStatus(203);
+		response.setMessage("Colour Added successfully ");
+		response.setStatus(205);
 		return new ResponseEntity<>(response, HttpStatus.OK);
 
 	}
-
-	/**
-	 * Api to Update Label
-	 * 
-	 * @param token
-	 * @param noteId
-	 * @param labelName
-	 * @return
-	 * @throws UnauthorizedException
-	 * @throws NoteNotFoundException
-	 * @throws LabelException
-	 */
-
-	@PutMapping(value = "/updateLabel/{labelId}/{labelName}")
-	public ResponseEntity<Response> updateLabel(HttpServletRequest req, @PathVariable String labelId,
-			@PathVariable String labelName) throws UnauthorizedException, NoteNotFoundException, LabelException {
-
-		String userId = (String) req.getAttribute("userId");
-		noteService.updateLabel(userId,labelId,labelName);
-		Response response = new Response();
-		response.setMessage("Label Updated successfully ");
-		response.setStatus(203);
-		return new ResponseEntity<>(response, HttpStatus.OK);
-
-	}
-
-	/**
-	 * Api to Delete Label
-	 * 
-	 * @param req
-	 * @param labelId
-	 * @return
-	 * @throws UnauthorizedException
-	 * @throws LabelException
-	 */
-
-	@DeleteMapping(value = "/deleteLabel{labelId}")
-	public ResponseEntity<Response> deleteLabel(HttpServletRequest req, @PathVariable String labelId)
-			throws UnauthorizedException, LabelException {
-
-		String userId = (String) req.getAttribute("userId");
-		
-		noteService.deleteLabel(userId, labelId);
-		Response response = new Response();
-		response.setMessage("Label Deleted Successfully");
-		response.setStatus(101);
-		return new ResponseEntity<>(response, HttpStatus.OK);
-	}
-
-	/**
-	 * Api to Remove label from the note
-	 * @param req
-	 * @param labelId
-	 * @param noteId
-	 * @return
-	 * @throws NoteNotFoundException
-	 * @throws UnauthorizedException
-	 * @throws LabelException 
-	 */
 	
-	@DeleteMapping(value = "/removeLabelFromNote{labelId}/{noteId}")
-	public ResponseEntity<Response> removeLabelFromNote(HttpServletRequest req, @PathVariable String labelId,@PathVariable String noteId)
-			throws  NoteNotFoundException, UnauthorizedException, LabelException{
-
-		String userId = (String) req.getAttribute("userId");
-		
-		noteService.removeLabelFromNote(userId, labelId,noteId);
-		Response response = new Response();
-		response.setMessage("Label Removed from Note");
-		response.setStatus(101);
-		return new ResponseEntity<>(response, HttpStatus.OK);
-	}
-
-	/**
-	 * Api to View Label
-	 * 
-	 * @param req
-	 * @return
-	 * @throws UnauthorizedException
-	 */
-
-	@GetMapping(value = "/viewLabel{userId}")
-	public ResponseEntity<List<Label>> viewLabels(HttpServletRequest req) throws UnauthorizedException {
-
-		String userId =(String) req.getAttribute("userId");
-		List<Label> list = noteService.viewLabels(userId);
-		return new ResponseEntity<>(list, HttpStatus.OK);
-
-	}
-
 }

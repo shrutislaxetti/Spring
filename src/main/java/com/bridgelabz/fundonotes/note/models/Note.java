@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "note")
+import org.springframework.data.elasticsearch.annotations.Document;
+@Document(indexName = "note", type = "Note")
+//@Document(collection = "note")
 public class Note {
 
 	@Id
@@ -20,7 +20,7 @@ public class Note {
 	private String userId;
 	private boolean trash;
 	private boolean Archive;
-	private List<LabelDTO> label;
+	private List<LabelDTO> labels;
 
 	public boolean isArchive() {
 		return Archive;
@@ -41,11 +41,11 @@ public class Note {
 	private boolean pin;
 
 	public List<LabelDTO> getLabel() {
-		return label;
+		return labels;
 	}
 
 	public void setLabel(List<LabelDTO> list) {
-		this.label = list;
+		this.labels = list;
 	}
 
 	public String getColour() {
@@ -104,12 +104,22 @@ public class Note {
 		this.updatedAt = updatedAt;
 	}
 
-	public String getUserid() {
+	
+
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserid(String userid) {
-		this.userId = userid;
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public List<LabelDTO> getLabels() {
+		return labels;
+	}
+
+	public void setLabels(List<LabelDTO> labels) {
+		this.labels = labels;
 	}
 
 	public Date getRemainder() {

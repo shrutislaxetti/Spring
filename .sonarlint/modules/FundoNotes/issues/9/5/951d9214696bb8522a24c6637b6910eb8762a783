@@ -1,16 +1,5 @@
 
-isquid:S3655X"<Call "optionallabel.isPresent()" before accessing the value.(ú‰¹®8üôÂ÷Î,H£IRMAJORZBUG
-ksquid:S1135ƒ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8üôÂ÷Î,H¡IRINFOZ
+squid:S3776>"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(½š…Àúÿÿÿÿ8õÌçõĞ,Hõ\RCRITICALZ
 CODE_SMELL
-Šsquid:S1192u"NDefine a constant instead of duplicating this literal "NoteNotFound" 12 times.(ü‘áÔşÿÿÿÿ8üôÂ÷Î,HIRCRITICALZ
-CODE_SMELL
-…squid:S1192z"NDefine a constant instead of duplicating this literal "UserNotfound" 13 times.(æ‰¥Ú8üôÂ÷Î,HœIRCRITICALZ
-CODE_SMELL
-ksquid:S1135Š"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8üôÂ÷Î,H¢IRINFOZ
-CODE_SMELL
-squid:CommentedOutCodeLineF"<This block of commented-out lines of code should be removed.(æÙôê8üôÂ÷Î,HIRMAJORZ
-CODE_SMELL
-squid:CommentedOutCodeLine_"<This block of commented-out lines of code should be removed.(œƒĞñ8üôÂ÷Î,H IRMAJORZ
-CODE_SMELL
-„squid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(Í©§êıÿÿÿÿ8ÃÁÅ÷Î,H©IRMAJORZ
+‹squid:S1192"NDefine a constant instead of duplicating this literal "NoteNotFound" 11 times.(ü‘áÔşÿÿÿÿ8ÎÌ©£Ğ,HéYRCRITICALZ
 CODE_SMELL

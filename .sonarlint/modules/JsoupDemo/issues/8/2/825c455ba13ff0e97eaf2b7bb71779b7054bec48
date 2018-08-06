@@ -1,0 +1,15 @@
+
+wsquid:UselessImportCheck"6Remove this unused import 'org.jsoup.select.Elements'.(ëÂè8ŞßŸĞ,HŞYRMINORZ
+CODE_SMELL
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(ó£û8§ÏŸĞ,HßYRMAJORZ
+CODE_SMELL
+jsquid:UselessImportCheck")Remove this unused import 'java.io.File'.(†Ğ¥Å8µóĞ,HàYRMINORZ
+CODE_SMELL
+l
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÇÕ‰8šÖ†ŸĞ,HáYRMAJORZ
+CODE_SMELL
+Â%squid:RedundantThrowsDeclarationCheck"tRemove the declaration of thrown exception 'java.net.URISyntaxException', as it cannot be thrown from method's body.(óÅÿ8”ã‚ŸĞ,HâYRMINORZ
+CODE_SMELL
+osquid:UselessImportCheck")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8µóĞ,HãYRMINORZ
+CODE_SMELL

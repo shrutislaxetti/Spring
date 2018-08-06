@@ -1,5 +1,3 @@
 
-Œsquid:UselessImportCheck"FRemove this unused import 'org.springframework.stereotype.Repository'.(¦ıÍıüÿÿÿÿ8Š€÷Î,HõHRMINORZ
-CODE_SMELL
-»squid:UselessImportCheck"uRemove this unused import 'org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories'.(èÆŒ½úÿÿÿÿ8³¯‡÷Î,HıHRMINORZ
+squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(€ñ¯æ8Í—†ôÏ,H¢TRMAJORZ
 CODE_SMELL
